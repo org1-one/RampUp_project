@@ -1,0 +1,49 @@
+name: Docker build
+on:
+  push:
+     branches:
+        - main
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: Building gradle code
+        steps:
+         - name: Checkout code
+           uses: actions/checkout@v3
+         - name: Set up JDK 11 for x64
+           uses: actions/setup-java@v4
+           with:
+               java-version: '11'
+               distribution: 'temurin'
+               architecture: x64       
+         - name: Cache Gradle dependencies
+           id: cache-gradle
+           uses: actions/cache@v3
+           with:
+            path: |
+              ~/.gradle/caches
+              ~/.gradle/wrapper
+            key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+            restore-keys: |
+              ${{ runner.os }}-gradle-
+         - name: Build with Gradle
+           run:  gradle build
+
+         - name: Run Tests
+           run: gradle test
+
+    docker_build:
+          runs-on: ubuntu-latest
+          name: Building Docker Image  
+          needs: build 
+          environment:
+            name: sample_env
+          uses: org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
+          with:
+             image-name: 'img1'
+             image-tag: 'latest'
+             registry-username: ${{ vars.DOCKERHUB_USERNAME }}
+             registry-password:${{ vars.DOCKERHUB_TOKEN }}  
+      
