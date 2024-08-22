@@ -37,11 +37,12 @@ jobs:
     docker_build:
           name: Building Docker Image  
           needs: build 
-          
           uses: org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
+          secrets:
+              registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
+              registry-password: ${{ secrets.DOCKERHUB_TOKEN }} 
           with:
               image-name: 'img1'
               image-tag: 'latest'
-              registry-username: ${{ vars.DOCKERHUB_USERNAME }}
-              registry-password: ${{ vars.DOCKERHUB_TOKEN }}  
+ 
       
