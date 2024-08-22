@@ -40,7 +40,7 @@ jobs:
           needs: build 
           steps:
            -
-            uses: /org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
+            uses: org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
             with:
               image-name: 'img1'
               image-tag: 'latest'
