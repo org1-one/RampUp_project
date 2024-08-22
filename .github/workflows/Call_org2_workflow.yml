@@ -38,8 +38,10 @@ jobs:
           runs-on: ubuntu-latest
           name: Building Docker Image  
           needs: build 
-          uses: /org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
-          with:
+          steps:
+           -
+            uses: /org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
+            with:
               image-name: 'img1'
               image-tag: 'latest'
               registry-username: ${{ vars.DOCKERHUB_USERNAME }}
