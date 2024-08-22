@@ -37,7 +37,7 @@ jobs:
     docker_build:
           name: Building Docker Image  
           needs: build 
-          uses: org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
+          uses: org2-one/demo-repository/.github/workflows/Call_org2_workflow.yml@main
           with:
               image-name: 'img1'
               image-tag: 'latest'
