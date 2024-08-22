@@ -42,6 +42,6 @@ jobs:
           with:
               image-name: 'img1'
               image-tag: 'v1'
-              dockerfile-path: 'Dockerfile' 
+              dockerfile-path: 'Dockerfile'  
  
       
