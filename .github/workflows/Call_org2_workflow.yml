@@ -35,13 +35,10 @@ jobs:
            run: gradle test
 
     docker_build:
-          runs-on: ubuntu-latest
           name: Building Docker Image  
           needs: build 
-          steps:
-           -
-            uses: org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
-            with:
+          uses: org2-one/demo-repository/.github/workflows/resuable_workflow.yml@main
+          with:
               image-name: 'img1'
               image-tag: 'latest'
               registry-username: ${{ vars.DOCKERHUB_USERNAME }}
