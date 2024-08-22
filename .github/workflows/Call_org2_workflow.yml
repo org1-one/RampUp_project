@@ -43,6 +43,6 @@ jobs:
               registry-password: ${{ secrets.DOCKERHUB_TOKEN }} 
           with:
               image-name: 'img1'
-              image-tag: 'latest'
+              image-tag: 'v1'
  
       
