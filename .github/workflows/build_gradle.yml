@@ -18,13 +18,14 @@ jobs:
           distribution: 'temurin'
           architecture: x64
     - name: Build Gradle
+      id: Build
       run: er
-
+      continue-on-error: true
     - name: Check build success
-      if: ${{ steps.run_failing_command.outcome == 'success' }}
+      if: ${{ steps.Build.outcome == 'success' }}
       run: echo "Command succeeded!"
     - name: Check build failure
-      if: ${{ steps.run_failing_command.outcome == 'failure' }}
+      if: ${{ steps.Build.outcome == 'failure' }}
       run: echo "Command failed!"
     - name: Test 
       run: gradle test
