@@ -18,7 +18,7 @@ jobs:
           distribution: 'temurin'
           architecture: x64
     - name: Build Gradle
-      run: gradle builds
+      run: gradl build
       continue-on-error: true
     - name: Check build success
       if: ${{ success() }}
