@@ -1,4 +1,4 @@
-name: Sample workflow for parallel jobs
+name: Slack Notifications
 on:
   push:
      branches:
