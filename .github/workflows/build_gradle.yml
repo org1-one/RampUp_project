@@ -19,7 +19,7 @@ jobs:
           architecture: x64
     - name: Build Gradle
       run: er
-      continue-on-error: true
+
     - name: Check build success
       if: ${{ steps.run_failing_command.outcome == 'success' }}
       run: echo "Command succeeded!"
