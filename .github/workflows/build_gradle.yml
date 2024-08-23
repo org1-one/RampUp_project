@@ -21,10 +21,10 @@ jobs:
       run: er
       continue-on-error: true
     - name: Check build success
-      if: ${{ success() }}
+      if: ${{ steps.run_failing_command.outcome == 'success' }}
       run: echo "Command succeeded!"
     - name: Check build failure
-      if: ${{ failure() }}
+      if: ${{ steps.run_failing_command.outcome == 'failure' }}
       run: echo "Command failed!"
     - name: Test 
       run: gradle test
