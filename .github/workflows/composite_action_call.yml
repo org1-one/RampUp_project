@@ -1,0 +1,25 @@
+name: calling  composite action
+on:
+  workflow_dispatch:
+   inputs:
+    input1:  
+     description: 'sample input 1'
+     required: true
+    input2:  
+     description: 'sample input 2'
+     required: true
+    input3: 
+     description: 'sample input 3'
+     required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+       name: call composite action
+       id: composite
+       uses: sharan2717/composite_action@main
+       with:
+           input1: ${{ inputs.input1 }}
+           input2: ${{ inputs.input2 }}
+           input3: ${{ inputs.input3 }}
