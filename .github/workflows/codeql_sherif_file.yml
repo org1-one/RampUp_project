@@ -46,4 +46,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: codeql-sarif
-        path: ./results/java.sarif
+        path: /home/runner/work/org1-gradle-1/results/java.sarif
