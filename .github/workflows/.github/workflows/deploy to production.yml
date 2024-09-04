@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  pull_request:
+    branches:
+      - testing
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Staging
+      run: echo "deployed successfully"
