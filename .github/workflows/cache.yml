@@ -1,8 +1,9 @@
 name: Gradle Dependency Cache
 on:
-  push:
+  pull_request:
      branches:
         - main
+        - testing
 
 
 jobs:
