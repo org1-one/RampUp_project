@@ -1,11 +1,13 @@
-name: Gradle Dependency Cache
+name: Gradle Build
 on:
   pull_request:
-     branches:
+       branches:
         - main
         - testing
-
-
+  merge_group:
+    branches:
+      - main
+      - testing
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -34,6 +36,5 @@ jobs:
 
          - name: Run Tests
            run: gradle test
-
 
 
