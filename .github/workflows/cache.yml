@@ -4,7 +4,10 @@ on:
        branches:
         - main
         - testing
-  merge_group: 
+  merge_group:
+    branches:
+      - main
+      - testing
 jobs:
     build:
         runs-on: ubuntu-latest
