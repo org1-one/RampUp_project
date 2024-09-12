@@ -1,9 +1,33 @@
-Gradle project
-Status Badge 
+### This is a training repository for Github
+
+# Concepts implemented
 
 
-[![calling  composite action](https://github.com/org1-one/org1-gradle-1/actions/workflows/composite_action_call.yml/badge.svg)](https://github.com/org1-one/org1-gradle-1/actions/workflows/composite_action_call.yml)
 
-GPG signature check 
-change1
-change in codespace
+**CI\CD workflows**
+  * Building gradle project
+  * Caching to speed up building
+  * Docker deployment
+  * Azure app deployment
+  * Matrix deployment
+  * Reusable workflows across organizations
+**Linters and Formatters**
+
+* Eslint
+* Prettier
+
+**Notifications**
+
+* Slack notifications
+* Mail notifications
+
+**Code scanning**
+
+* Synk
+* CodeQL
+* Sonarcube
+
+**Branch Protection Rules**
+**GitHub Secrets,Variables**
+**GitHub Apps - JIRA**
+**GitHub Enterprise Server**
